@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: black;
+  color: white;
+}
+/* *************************** Navbar ****************************** */
+nav {
+  color: white;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  background: rgb(65, 63, 63);
+  position: relative;
+  z-index: 1;
+  background: rgb(65, 63, 63);
+}
+
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background: rgb(65, 63, 63);
+  border-bottom: px solid black;
+  gap: 5rem;
+  height: 70px;
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 80px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.menu {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  /* justify-self: flex-end; */
+  gap: 15px;
+  
+}
+
+.menu .nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav_logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+.menu .nav-link:hover {
+  font-weight: 700;
+  height: auto;
+}
+.form-inline {
+  display: flex;
+}
+
+.form-inline input[type="search"] {
+  width: 200px; /* Adjust as needed */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.form-inline button[type="submit"] {
+  padding: 8px 16px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-inline button[type="submit"]:hover {
+  background-color: #747272;
+  font-weight: 700;
+}
+@media screen and (max-width: 767px) {
+  /* Reset padding and margin on navbar and its children */
+  nav,
+  .nav_container,
+  .menu,
+  .form-inline {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hide the menu links */
+  .menu .nav-link {
+    display: none;
+  }
+  .nav_logo{
+    margin: auto;
+    margin-top: 20px ;
+  }
+
+  /* Show the logo until width is 430px */
+  @media screen and (max-width: 430px) {
+    .nav_logo {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 574px) {
+    .menu .searchbar {
+      width: 100%; /* Make the search bar occupy the full width */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px !important; /* Set height as important */
+    }
+  
+    /* Adjust the styling for the search input */
+    .form-inline input[type="search"] {
+      width: calc(100% - 10px); /* Calculate width to allow for button */
+      padding: 8px; /* Add padding for better appearance */
+      border-radius: 5px; /* Add border-radius for rounded corners */
+      border: 1px solid #ccc; /* Add border for better visibility */
+      margin-right: 10px;
+      margin-top: 10px; /* Add right margin for spacing */
+      height: 100%;
+    }
+  
+    /* Adjust the styling for the search button */
+    .form-inline button[type="submit"] {
+      padding: 8px 16px; /* Add padding for better appearance */
+      background-color: gray;
+      color: white;
+      border: none;
+      margin-right: 10px;
+      border-radius: 5px; /* Add border-radius for rounded corners */
+      cursor: pointer;
+      height: 90%; /* Set the height to 100% */
+    }
+  }
+  
+  /* Show only the search bar */
+ 
+}
+
+
+
+/* *************************** Movie Card ****************************** */
+.card {
+  background-color: #141414; 
+  border: none;
+  overflow: hidden; 
+  margin-bottom: 20px; 
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.card-img-top {
+  width: 100%; 
+  height: 250px; 
+  object-fit: cover; 
+}
+
+.card-body {
+  padding: 15px;
+  color: white; 
+}
+
+.card-title {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 0;
+  font-size: 0.8rem; 
+}
+
+.btn-primary {
+  background-color: #e50914; 
+  border-color: #e50914;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px; 
+  position: absolute; 
+  bottom: 10px; 
+  right: 10px; 
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .btn-primary {
+  opacity: 1; /* Show button on hover */
+}
+/**************** Cast List ****************** */
+.cast-list {
+  background-color: black;
+  border: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cast-members {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.cast-member {
+  background-color: #141414;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cast-img-top {
+  width: 100%;
+  height: 250px; /* Adjust image height as needed */
+  object-fit: cover;
+}
+
+.cast-member-info {
+  padding: 15px;
+  color: white;
+}
+
+.cast-member-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.cast-member-character {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+/* ***************** Movie Detail ************* */
+.movie_container{
+  margin: 30px;
+  display: flex;
+  border: white 1px;
+  flex-direction: row;
+  background-color: rgb(17, 17, 26);
+  height: 400px;
+  gap: 20px;
+  border-radius: 20px;
+
+}
+.movie-info{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.movie-info .overview{
+  padding: 10px;
+}
+.thumbnail{
+  
+  width: 50%;
+  display: block;
+  height: 100%;
+}
+.thumbnail img{
+  border-radius: 0 20px 20px 0;
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+.backdrop{
+  height: 100%;
+  width: 100%;
+}
+.poster img{
+  height: 100%;
+  padding: 7px;
+}
+.poster .movie-poster{
+  height: 100%;
+}
+.poster{
+  padding: 3px;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+}
+.details p{
+  margin-left: 15px;
+}
+.details .title{
+  padding-top: 10px;
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 10;
+}
+.details .rate{
+  font-size: 25px;
+  font-weight: 10;
+  font-weight: 200;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(156, 156, 214);
+}
+.details .time{
+  font-size: 23px;
+  font-weight: 10;
+  font-weight: 200;
+  font-family: 'Courier New', Courier, monospace;
+  border:  white 2px;
+}
+.details .genres{
+  font-size: 19px;
+  font-weight: 10;
+  font-weight: 200;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(193, 193, 228);
+}
+.details .release{
+  font-size: 19px;
+  font-weight: 10;
+  font-weight: 200;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(156, 156, 214);
+}
+.overview{
+  font-size: 25px;
+  font-weight: 10;
+  margin-bottom: 5px;
+  
+}
+.overview .overview-desc{
+  font-size: 17px;
+  color: rgb(197, 197, 218);
+}
+
+.container {
+  margin-top: 50px; /* Adjust the value as needed */
+}
