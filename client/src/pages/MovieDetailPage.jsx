@@ -36,6 +36,7 @@ const MovieDetailPage = () => {
 
 
   return (
+    <>
     <div className=" movie-detail">
       <div className=" movie_container">
           <div className="movie-info">
@@ -64,11 +65,12 @@ const MovieDetailPage = () => {
             </div>
           </div>
       </div>
-      <div className="container cast-list">
+    </div>
+    <div className="container cast-list">
         <h3>Cast</h3>
         <CastList cast={cast} />
-      </div>
     </div>
+    </>  
   );
 };
 

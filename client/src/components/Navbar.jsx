@@ -16,29 +16,29 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav_container">
-      <Link to='/' className='nav_logo'>
-        <img to='/' className='logo' src={logo} alt='Movie DB'></img>
-      </Link>
-      <div className="navbar">
-        <ul className="menu">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/">Popular</NavLink> {/* Use NavLink */}
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/top-rated">Top Rated</NavLink> {/* Use NavLink */}
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/upcoming">Upcoming</NavLink> {/* Use NavLink */}
-          </li>
-          <li className='searchbar'>
-            <form className="form-inline my-2 my-lg-0" onSubmit={handleSubmit}>
-              <input className="form-control mr-sm-2" type="search" placeholder="Movie Name" aria-label="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </li>
-        </ul>
+        <Link to='/' className='nav_logo'>
+          <img to='/' className='logo' src={logo} alt='Movie DB'></img>
+        </Link>
+        <div className="navbar">
+          <ul className="menu">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">Popular</NavLink> {/* Use NavLink */}
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/top-rated">Top Rated</NavLink> {/* Use NavLink */}
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/upcoming">Upcoming</NavLink> {/* Use NavLink */}
+            </li>
+            <li className='searchbar'>
+              <form className="form-inline my-2 my-lg-0" onSubmit={handleSubmit}>
+                <input className="form-control mr-sm-2" type="search" placeholder="Movie Name" aria-label="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
     </nav>
   );
 };

@@ -21,7 +21,6 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Popular Movies</h1>
       <MovieList movies={movies} />
       {movies.length > 0 && (
         <button onClick={handleLoadMore} className="btn btn-primary">

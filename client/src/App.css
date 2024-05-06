@@ -93,7 +93,7 @@ nav {
   font-weight: 700;
 }
 @media screen and (max-width: 767px) {
-  /* Reset padding and margin on navbar and its children */
+  
   nav,
   .nav_container,
   .menu,
@@ -102,7 +102,7 @@ nav {
     margin: 0;
   }
 
-  /* Hide the menu links */
+  
   .menu .nav-link {
     display: none;
   }
@@ -111,47 +111,49 @@ nav {
     margin-top: 20px ;
   }
 
-  /* Show the logo until width is 430px */
+  
   @media screen and (max-width: 430px) {
     .nav_logo {
       display: none;
     }
+    nav{
+     display: flex;
+     align-items: center;
+    }
   }
   @media screen and (max-width: 574px) {
     .menu .searchbar {
-      width: 100%; /* Make the search bar occupy the full width */
+      width: 100%; 
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 50px !important; /* Set height as important */
+      height: 50px !important; 
     }
   
-    /* Adjust the styling for the search input */
+    
     .form-inline input[type="search"] {
-      width: calc(100% - 10px); /* Calculate width to allow for button */
-      padding: 8px; /* Add padding for better appearance */
-      border-radius: 5px; /* Add border-radius for rounded corners */
-      border: 1px solid #ccc; /* Add border for better visibility */
+      width: calc(100% - 10px); 
+      padding: 8px; 
+      border-radius: 5px;
+      border: 1px solid #ccc;
       margin-right: 10px;
-      margin-top: 10px; /* Add right margin for spacing */
+      margin-top: 10px; 
       height: 100%;
     }
   
-    /* Adjust the styling for the search button */
+    
     .form-inline button[type="submit"] {
-      padding: 8px 16px; /* Add padding for better appearance */
+      padding: 8px 16px; 
       background-color: gray;
       color: white;
       border: none;
       margin-right: 10px;
-      border-radius: 5px; /* Add border-radius for rounded corners */
+      border-radius: 5px;
       cursor: pointer;
-      height: 90%; /* Set the height to 100% */
+      height: 90%; 
     }
   }
   
-  /* Show only the search bar */
- 
 }
 
 
@@ -172,7 +174,7 @@ nav {
 
 .card-img-top {
   width: 100%; 
-  height: 250px; 
+  height: 300px; 
   object-fit: cover; 
 }
 
@@ -205,7 +207,7 @@ nav {
 }
 
 .card:hover .btn-primary {
-  opacity: 1; /* Show button on hover */
+  opacity: 1; 
 }
 /**************** Cast List ****************** */
 .cast-list {
@@ -233,7 +235,7 @@ nav {
 
 .cast-img-top {
   width: 100%;
-  height: 250px; /* Adjust image height as needed */
+  height: 250px; 
   object-fit: cover;
 }
 
@@ -262,7 +264,6 @@ nav {
   height: 400px;
   gap: 20px;
   border-radius: 20px;
-
 }
 .movie-info{
   width: 50%;
@@ -350,5 +351,26 @@ nav {
 }
 
 .container {
-  margin-top: 50px; /* Adjust the value as needed */
+  margin-top: 50px; 
+}
+
+@media only screen and (max-width: 960px) {
+  .movie-info .overview,
+  .thumbnail {
+    display: none;
+  }
+  .movie-info,
+  .poster{
+    display:flex;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .movie_container{
+    height: auto;
+    width: 100%;
+    margin: 5px;
+    background:none;
+  }
+  
 }

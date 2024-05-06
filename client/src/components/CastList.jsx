@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-// import './CastList.css'; // Import your CSS file
+
 import '../App.css';
 
 const CastList = ({ cast }) => {
-  const [visibleCount, setVisibleCount] = useState(5); // State to track the number of visible cast members
+  const [visibleCount, setVisibleCount] = useState(5); 
 
-  // Function to handle the click event for loading more cast members
+
   const handleLoadMore = () => {
-    setVisibleCount(cast.length); // Display all cast members
+    setVisibleCount(cast.length); 
   };
 
-  // Check if cast exists before mapping over it
+
   if (!cast || !cast.length) {
     return <div>No cast information available</div>;
   }
 
   return (
-    <div className="cast-list grid">
-      {/* <h3>Cast</h3> */}
-      <ul className="cast-members">
-        {/* Map over the cast array up to the visible count */}
+    <>
+      <ul className="cast-members grid">
         {cast.slice(0, visibleCount).map((actor) => (
           <li key={actor.id} className="cast-member">
             <img
@@ -34,13 +32,12 @@ const CastList = ({ cast }) => {
           </li>
         ))}
       </ul>
-      {/* Display the "Load More" button if there are more than 6 cast members */}
       {cast.length > 6 && visibleCount < cast.length && (
         <button className="load-more-button" onClick={handleLoadMore}>
           Load More
         </button>
       )}
-    </div>
+    </>
   );
 };
 
